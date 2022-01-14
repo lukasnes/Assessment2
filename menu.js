@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+let pizza = {
+    name: "Papa's Pizza",
+    price: 20,
+    category: "Family Meals",
+    popularity: 7,
+    rating: 4,
+    tags: ['tasty','fingerlicking good','no pineapples']
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +60,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[2])
 
 /*
     Third, destructure the price off of the
@@ -62,8 +69,9 @@
     Print the value of your new price variable.
 */
 
-//CODE HERE
-
+//CODE HER
+pizza.price = 24;
+console.log(pizza.price)
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +81,8 @@
 */
 
 //CODE HERE
-
+pizza.category = 'Party Food';
+console.log(pizza.category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +97,42 @@
 */
 
 //CODE HERE
-
+let foodArr = [{
+    name: 'Bacon Bites',
+    price: 4,
+    category: 'Fingerfood',
+    popularity: 10,
+    rating: 5,
+    tags: ["irresistable","pocket burner","more!"]
+},{
+    name: 'Proscuitto Rolls',
+    price: 7,
+    category: 'Appetizer',
+    popularity: 10,
+    rating: 5,
+    tags: ["The rich man's bacon bite","delicate, yet rich"]
+},{
+    name: 'Breakfast Bites',
+    price: 4,
+    category: 'Fingerfood',
+    popularity: 8,
+    rating: 4,
+    tags: ["Sweet","Full of energy","Screams good morning"]
+},{
+    name: 'No Pork Bites',
+    price: 5,
+    category: 'Fingerfood',
+    popularity: 7,
+    rating: 4,
+    tags: ["For those that don't eat pork","Tasty regardless","Pork-free"]
+},{
+    name: 'Bacon Meatloaf',
+    price: 20,
+    category: 'Dinner',
+    popularity: 9,
+    rating: 5,
+    tags: ["just wrap it in bacon","the texan way"]
+}]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,8 +149,12 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+const filteredFood = foodArr.filter((el) => {
+    if(el.category === 'Fingerfood'){
+        return el
+    }
+})
+console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -149,13 +197,62 @@
 */
 
 //CODE HERE
-
-
+const filterByProperty = (property, num1, type) => {
+    if(type === 'below' && property === 'rating'){
+        let propertyFilter = foodArr.filter((el) => {
+            if(el.rating < num1){
+                return el
+            }
+        })
+        console.log(propertyFilter)
+    }
+    if(type === 'below' && property === 'popularity'){
+        let propertyFilter = foodArr.filter((el) => {
+            if(el.popularity < num1){
+                return el
+            }
+        })
+        console.log(propertyFilter)
+    }
+    if(type === 'below' && property === 'price'){
+        let propertyFilter = foodArr.filter((el) => {
+            if(el.price < num1){
+                return el
+            }
+        })
+        console.log(propertyFilter)
+    }
+    if(type === 'above' && property === 'rating'){
+        let propertyFilter = foodArr.filter((el) => {
+            if(el.rating > num1){
+                return el
+            }
+        })
+        console.log(propertyFilter)
+    }
+    if(type === 'above' && property === 'popularity'){
+        let propertyFilter = foodArr.filter((el) => {
+            if(el.popularity > num1){
+                return el
+            }
+        })
+        console.log(propertyFilter)
+    }
+    if(type === 'above' && property === 'price'){
+        let propertyFilter = foodArr.filter((el) => {
+            if(el.price > num1){
+                return el
+            }
+        })
+        console.log(propertyFilter)
+    }
+}
 /*
-    Invoke the `filterByProperty` function passing
-    in a value for each paramter.
+Invoke the `filterByProperty` function passing
+in a value for each paramter.
 
-    You'll have to console.log to see the filtered array
+You'll have to console.log to see the filtered array
 */
 
 //CODE HERE
+filterByProperty('price',6,'below')
