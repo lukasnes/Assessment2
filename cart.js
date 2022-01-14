@@ -35,8 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+const summedPrice = cart.reduce((acc,priceObj) => acc += priceObj.price,0)
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,8 +54,12 @@ const cart = [
 */
 
 //CODE HERE
-
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    taxedTotal = cartTotal + (cartTotal * tax)
+    finalPrice = taxedTotal - couponValue
+    console.log(Number(finalPrice.toFixed(2)))
+}
+calcFinalPrice(56,7,.08)
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,7 +83,10 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+    My customer object will have the customer's name, because most customers like to be remembered if they are recurring.
+    Are they creatures of habit? Does the customer get the same item every time?
+    What's their favorite item when they come in?
+    What's their favorite thing? What can you strike up a conversation about every time they come in to show that you care?
 */
 
 /*
@@ -88,3 +95,9 @@ const cart = [
 */
 
 //CODE HERE
+    let customer = {
+        name: 'Bertha',
+        habitual: true,
+        favoriteItem: 'Bacon Meatloaf',
+        favoriteThing: 'Her children',
+    }
