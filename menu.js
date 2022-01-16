@@ -150,13 +150,13 @@ let foodArr = [{
 //CODE HERE
 
 const filteredFood = foodArr.filter((el) => {
-    if(el.category === 'Fingerfood'){
-        return el
+    for(i = 0; i < el.tags.length; i++){
+        if(el.tags[i] === "just wrap it in bacon"){
+            return el
+        }
     }
 })
 console.log(filteredFood)
-
-
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
@@ -198,54 +198,17 @@ console.log(filteredFood)
 
 //CODE HERE
 const filterByProperty = (property, num1, type) => {
-    if(type === 'below' && property === 'rating'){
-        let propertyFilter = foodArr.filter((el) => {
-            if(el.rating < num1){
-                return el
-            }
-        })
-        console.log(propertyFilter)
-    }
-    if(type === 'below' && property === 'popularity'){
-        let propertyFilter = foodArr.filter((el) => {
-            if(el.popularity < num1){
-                return el
-            }
-        })
-        console.log(propertyFilter)
-    }
-    if(type === 'below' && property === 'price'){
-        let propertyFilter = foodArr.filter((el) => {
-            if(el.price < num1){
-                return el
-            }
-        })
-        console.log(propertyFilter)
-    }
-    if(type === 'above' && property === 'rating'){
-        let propertyFilter = foodArr.filter((el) => {
-            if(el.rating > num1){
-                return el
-            }
-        })
-        console.log(propertyFilter)
-    }
-    if(type === 'above' && property === 'popularity'){
-        let propertyFilter = foodArr.filter((el) => {
-            if(el.popularity > num1){
-                return el
-            }
-        })
-        console.log(propertyFilter)
-    }
-    if(type === 'above' && property === 'price'){
-        let propertyFilter = foodArr.filter((el) => {
-            if(el.price > num1){
-                return el
-            }
-        })
-        console.log(propertyFilter)
-    }
+    const filtered = foodArr.filter((food) => {
+        if(type === 'above') {
+            return food[property] > num1
+        } 
+        else if (type === 'below') {
+            return food[property] < num1
+        }
+        return filtered
+    })
+    console.log(filtered)
+   
 }
 /*
 Invoke the `filterByProperty` function passing

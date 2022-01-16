@@ -99,13 +99,10 @@ class Manager extends Employee{
     getEmployees(){
         console.log(`${this.name} manages ${this.employees}`)
     }
-    addEmployees(emp){
-        this.employees = this.employees.splice(0,0,emp)
-        console.log(this.employees)
+    addEmployees(emp) {
+        this.employees.push(emp)
     }
 }
-
-
 /*
     Create a new instance of your class.
     Save it to a variable called `manager`.
@@ -118,7 +115,7 @@ class Manager extends Employee{
 */
 
 //CODE HERE
-let newManager = new Manager('Winston','weekday mornings, weekday afternoons',)
+let newManager = new Manager('Winston','weekday mornings, weekday afternoons',['Cece','Schmidt'])
 
 console.log(newManager)
 
@@ -145,3 +142,4 @@ that an employee was added.
 
 //CODE HERE
 newManager.getEmployees()
+console.log(newManager)

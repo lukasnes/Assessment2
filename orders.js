@@ -37,8 +37,8 @@ class Ticket {
         this.customerId = customerId;
         this.status = 'queued'
     }
-    updateStatus(input){
-        this.status = input
+    updateStatus(newStatus){
+        this.status = newStatus
         console.log(`The order for ${this.customerId} is now ${this.status}`)
     }
 }
